@@ -1,4 +1,4 @@
-# [![local-startpage](test.png)](https://linktoreleasedl)
+# [![local-startpage](https://u.teknik.io/w8SRz.png)](#install)
 
 ## Overview
 
@@ -56,7 +56,7 @@ $ npm install local-startpage
 Using default fonts. Organized colors using CSS variables in `startpage.html`.
 
 ## License
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me and are also licensed with GNU/GPL v3.
+[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me and are also licensed with GNU/GPL v3.0.
 
 ## Contribute
 To contribute file an issue or send a pull request.
