@@ -24,9 +24,9 @@ I made this to get around having to edit links in my HTML file via text editor; 
 ---
 
 ## Browser support
-Tested working as it should be on Mozilla IceCat 52.3.0 (Linux), Mozilla Firefox 56.0, Google Chrome 63.0 (Windows).
+Tested working as it should be on Mozilla IceCat 52.3.0 (Linux) and Mozilla Firefox 56.0, Google Chrome 63.0 (Windows).
 
-It should work in all current web browser versions except maybe [IE, Edge and Opera Mini]([1]).
+It might work in all current web browser versions except maybe [IE, Edge and Opera Mini](#browser-support-notes).
 
 ## Install
 Only `startpage.html` and `startpage.js` are required.
@@ -53,7 +53,7 @@ $ npm install local-startpage
 ```
 
 ## Modify styles
-Using default fonts. Organized colors using [CSS variables][3] in `startpage.html`.
+Using default fonts. Organized colors using CSS variables in `startpage.html`.
 
 ## License
 [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me and are also licensed with GNU/GPL v3.
@@ -65,7 +65,7 @@ To contribute file an issue or send a pull request.
 - https://de.wikipedia.org/wiki/Web_Storage
 - https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-- Tool used to compress SVGs: svg compressor
+- Tool used to compress SVGs: https://jakearchibald.github.io/svgomg/
 
 ### Browser support notes
 - https://caniuse.com/#search=Web%20Storage
