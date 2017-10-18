@@ -1,0 +1,13 @@
+{
+  "name": "local-startpage",
+  "version": "0.1.2",
+  "description": "Editable web browser frontpage without dependencies using local storage.",
+  "main": "startpage.html",
+  "keywords": [
+    "startpage",
+    "frontpage",
+    "web-browser"
+  ],
+  "author": "Jens Lettkemann <jltk@protonmail.com> (https://github.com/jltk)",
+  "license": "ISC"
+}
