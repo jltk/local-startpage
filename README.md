@@ -29,7 +29,7 @@ Tested working as it should be on Mozilla IceCat 52.3.0 (Linux) and Mozilla Fire
 It might work in all current web browser versions except maybe [IE, Edge and Opera Mini](#browser-support-notes).
 
 ## Install
-Only `startpage.html` and `startpage.js` are required.
+`startpage.html` and `startpage.js` are required. Favicon is optional.
 
 ```
 
