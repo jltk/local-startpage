@@ -33,8 +33,6 @@ Only `startpage.html` and `startpage.js` are required.
 
 ```
 
-
-
     ┌─ README.md
     ├─ package.json
     └─ /local-startpage         // relevant folder
