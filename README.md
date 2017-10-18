@@ -72,4 +72,4 @@ To contribute file an issue or send a pull request.
 - https://caniuse.com/#search=flexbox
 - https://caniuse.com/#search=CSS%20variables
 
-**TO-DO:** editable headlines, add multiple boxes, edit set links, online, sessionStorage mode, enhance readme file, sync files
+**TO-DO:** editable headlines, add multiple boxes, edit set links, hosting online, sessionStorage mode, enhance readme file, sync files
