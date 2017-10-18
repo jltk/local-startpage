@@ -3,6 +3,10 @@
   "version": "0.1.2",
   "description": "Editable web browser frontpage without dependencies using local storage.",
   "main": "startpage.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jltk/local-startpage"
+  },
   "keywords": [
     "startpage",
     "frontpage",
