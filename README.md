@@ -7,7 +7,7 @@
 + No database needed ([Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API))
 + Data doesn't get deleted when closing your browser or clearing browser cache
 
-I made this to get around having to edit links in my HTML file via text editor.
+I made this to get around having to edit links in my HTML file via text editor; will continuously improve and update.
 
 ---
 
@@ -17,15 +17,16 @@ I made this to get around having to edit links in my HTML file via text editor.
     + [Install via git](#install-via-git)
     + [Install via npm](#install-via-npm)
 + [Modify styles](#modify-styles)
-+ [License & contribute](#license-contribute)
++ [License](#license)
++ [Contribute](#contribute)
 + [Further reading](#further-reading)
 
 ---
 
 ## Browser support
-Tested working as it should be on Mozilla IceCat 52.3.0, Mozilla Firefox 56.0, Google Chrome 63.0 on Linux and Windows.
+Tested working as it should be on Mozilla IceCat 52.3.0 (Linux), Mozilla Firefox 56.0, Google Chrome 63.0 (Windows).
 
-It should work in all current web browser versions except maybe [IE, Edge and Opera Mini][1].
+It should work in all current web browser versions except maybe [IE, Edge and Opera Mini]([1]).
 
 ## Install
 Only `startpage.html` and `startpage.js` are required.
@@ -45,7 +46,7 @@ Only `startpage.html` and `startpage.js` are required.
 
 ### Install via git
 ```sh
-$ git clone https://
+$ git clone https://github.com/jltk/local-startpage.git
 ```
 
 ### Install via npm
@@ -53,17 +54,14 @@ $ git clone https://
 $ npm install local-startpage
 ```
 
-### How to set browser homepage
-- Mozilla
-- Chrome
-- Safari
-- Android
-
 ## Modify styles
 Using default fonts. Organized colors using [CSS variables][3] in `startpage.html`.
 
-## License & contribute
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me. To contribute file an issue or send a pull request.
+## License
+[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me and are also licensed with GNU/GPL v3.
+
+## Contribute
+To contribute file an issue or send a pull request.
 
 ## Further reading
 - https://de.wikipedia.org/wiki/Web_Storage
@@ -71,9 +69,9 @@ Using default fonts. Organized colors using [CSS variables][3] in `startpage.htm
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
 - Tool used to compress SVGs: svg compressor
 
-**Browser support notes:** 
-[1]: http://caniuse.com/#search=Web%20Storage
-[2]: http://caniuse.com/#search=flexbox
-[3]: http://caniuse.com/#search=CSS%20variables
+### Browser support notes
+- https://caniuse.com/#search=Web%20Storage
+- https://caniuse.com/#search=flexbox
+- https://caniuse.com/#search=CSS%20variables
 
 **TO-DO:** editable headlines, add multiple boxes, edit set links, online, sessionStorage mode, enhance readme file, sync files
