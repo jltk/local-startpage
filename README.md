@@ -1,4 +1,4 @@
-# [![local-startpage](https://u.teknik.io/w8SRz.png)](#install)
+# [![local-startpage](https://u.teknik.io/w8SRz.png)](https://github.com/jltk/local-startpage/releases/tag/v0.1.4)
 
 **local-startpage** is a lightweight vanilla HTML and JavaScript file to serve as dynamic web browser startpage, with editable links, stored in the browsers local storage (using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)).
 
