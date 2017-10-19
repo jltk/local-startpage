@@ -62,8 +62,8 @@ To contribute file an issue or send a pull request.
 ## Further reading
 - https://www.w3.org/TR/webstorage/#dom-localstorage
 - https://de.wikipedia.org/wiki/Web_Storage
-- https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://stackoverflow.com/questions/9948284/how-persistent-is-localstorage
 - Tool used to compress SVG: https://jakearchibald.github.io/svgomg/
 
 ### Browser support notes
