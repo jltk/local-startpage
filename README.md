@@ -3,7 +3,7 @@
 **local-startpage** is a lightweight vanilla HTML and JavaScript file to serve as dynamic web browser startpage, with editable links, stored in the browsers local storage (using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)).
 
 + **Pro:** No database needed ([Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API))
-+ **Con:** Data might get lost when clearing browser cookies (Firefox) or cache (Chrome)
++ **Con:** Data might get lost when clearing browser cookies (Firefox) or cache (Chrome), browser specific
 
 I made this to get around having to edit links in my HTML file via text editor; will continuously improve and update.
 
@@ -60,6 +60,7 @@ Using default sans-serif font. Organized colors using CSS variables in `startpag
 To contribute file an issue or send a pull request.
 
 ## Further reading
+- https://www.w3.org/TR/webstorage/#dom-localstorage
 - https://de.wikipedia.org/wiki/Web_Storage
 - https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
