@@ -49,6 +49,7 @@ $ git clone https://github.com/jltk/local-startpage.git
 ```sh
 $ npm install local-startpage
 ```
+You can use ``npm install --prefix /path/to/dir --global`` to install to a specific directory.
 
 ## Modify styles
 Using default sans-serif font. Organized colors using CSS variables in `startpage.html`.
