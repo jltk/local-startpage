@@ -9,21 +9,20 @@
         :root {
             /* variables all colors  */
             --main-bg-color: #272d36;
-            --main-outline-color: rgba(40,40,55,.5);
-            --main-link-color: #9fc5d9;
-            --main-highlight-color: #5ed69c;
-            --main-highlight-color-dark: rgba(38,149,97,1);
-            --mainBtn-remove-links-bg: #dc578c;
-            --mainBtn-remove-links: #704053;
+            --main-color: rgba(40,40,55,.5);
+            --main-link-color: rgba(255,255,255,.7);
+            --main-accent-color: #5ed69c;
+            --main-color-remove: #dc578c;
+            --main-color-remove-text: #704053;
             --white: #ffffff;
-            --bg-gradient-start: rgba(39,45,54,.75);
-            --bg-gradient-end: rgba(94,214,156,.15);
+            --bg-gradient-start: rgba(39,45,54,.25);
+            --bg-gradient-end: rgba(16,23,33,.15);
             /* variables background image */
-            --main-bg-image: url('');
+            --main-bg-image: url();
         }
         body {
             background: linear-gradient(70deg, var(--bg-gradient-start), var(--bg-gradient-end)), var(--main-bg-image);
-            /* background-size: cover; */
+            background-position: top center;
             box-sizing: border-box;
             margin: 0;
             height: 100vh;
@@ -32,15 +31,9 @@
             justify-content: center;
             align-items: center;
             font-family: sans-serif;
-            -webkit-touch-callout: none;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
-        }
-        .box {
-            background: var(--main-bg-color);
-            outline: 5px solid var(--main-outline-color);
-            padding: 16px;
         }
         ul {
             list-style: none;
@@ -53,26 +46,38 @@
         }
         li {
             flex-grow: 1;
-            padding: 8px;
             display: flex;
             justify-content: center;
+            padding: 8px 6px;
         }
         a {
             color: var(--main-link-color);
             text-decoration: none;
-            outline: none;
+            outline: 0;
+            border: 0;
+            background: var(--main-color);
+            padding: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+        }
+        li span {
+             position: relative;
+             margin: 8px 0;
         }
         a:hover {
-            text-decoration: underline;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transform: translateY(1px);
+            background: var(--main-bg-color);
+            color: var(--white);
         }
         .btnAdd {
             position: absolute;
             width: 54px;
             height: 54px;
             border-radius: 54px;
-            box-shadow: 0 0 0 6px var(--main-outline-color);
+            box-shadow: 0 0 0 6px var(--main-color);
             background: var(--main-bg-color);
-            border: none;
+            border: 0;
             right: 24px;
             bottom: 24px;
             cursor: pointer;
@@ -90,7 +95,7 @@
             opacity: 1;
         }
         .active {
-            box-shadow: 0 0 0 6px var(--main-highlight-color);
+            box-shadow: 0 0 0 6px var(--main-accent-color);
         }
         .hide {
             display: none;
@@ -99,56 +104,65 @@
             cursor: pointer;
         }
         button, input {
-            height: 21px;
             outline: 0;
             border: 0;
             padding: 0;
+            margin: 0;
         }
         .remove {
-            color: var(--mainBtn-remove-links);
-            background: var(--mainBtn-remove-links-bg);
+            color: var(--main-color-remove-text);
+            background: var(--main-color-remove);
             width: 21px;
-            height: 18px;
+            height: 21px;
             border-radius: 21px;
             border-bottom-left-radius: 0;
             font-size: 9px;
-            margin-left: 4px;
+            position: absolute;
+            right: -14px;
+            top: -20px;
         }
         .remove:hover {
             color: var(--white);
         }
         #panel {
             height: 27px;
-            margin-top: 10px;
+            width: 232px;
+            position: absolute;
+            bottom: 37px;
+            right: 70px;
+            background: var(--main-color);
+            padding: 2px;
+        }
+        form {
             padding: 0;
-            text-align: center;
-            background: var(--main-outline-color);
-            outline: 5px solid var(--main-outline-color);
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
         }
         #panel button {
-            margin-right: 2px;
             width: 32px;
-            border: none;
-            background: var(--main-highlight-color);
-            color: var(--main-highlight-color-dark);
+            background: var(--main-accent-color);
+            color: var(--main-accent-color);
+            box-shadow: inset 0 0 0 2px var(--main-color);
         }
         #panel input {
-            border: none;
             padding-left: 6px;
-            max-width: 110px;
+            max-width: 80px;
+            margin-right: 2px;
             color: var(--white);
-            background: var(--main-outline-color);
-            box-shadow: inset 0 0 0 2px var(--main-outline-color);
+            background: var(--main-color);
+            box-shadow: inset 0 0 0 2px var(--main-color);
         }
         /* a little bit of input ux */
         #panel button:hover {
             color: var(--white);
         }
         #panel button:active {
-            border: 2px solid var(--white);
+            box-shadow: inset 0 0 0 2px var(--main-color);
         }
         #panel input:focus {
-            box-shadow: inset 0 0 0 2px var(--main-outline-color);
+            box-shadow: inset 0 0 0 2px var(--main-accent-color);
         }
         #panel input:valid ~ button {
             box-shadow: inset 0 0 0 2px var(--white);
@@ -158,8 +172,8 @@
             box-shadow: inset 0 0 0 2px var(--white);
         }
         #panel input:invalid ~ button {
-            box-shadow: inset 0 0 0 2px var(--main-outline-color);
-            color: var(--main-outline-color);
+            box-shadow: inset 0 0 0 2px var(--main-color);
+            color: var(--main-color);
         }
         #panel input:required {
             box-shadow: 0;
@@ -168,18 +182,18 @@
 </head>
 <body>
     <base target="_blank"><!-- opens all links in a new window -->
-    <div class="boxWrap">
-        <div class="box" id="links"></div>
-        <div class="hide" id="panel">
-            <input id="urlLabel" placeholder="label" required>
-            <input id="urlInput" placeholder="hostname" required>
-            <button id="addUrl">➜</button>
-        </div>
-        <div class="btnAdd" id="btnToggle">
-            <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.6 26.6">
-                <path d="M21.2.3L2.8 18.7l5.1 5.1L26.3 5.4c.4-.4.4-1 0-1.4L22.6.3c-.4-.4-1-.4-1.4 0zM1.3 26.5l4.8-1.3-4.8-4.8L0 25.2c-.2 1 .4 1.5 1.3 1.3z"/>
-            </svg>
-        </div>
+    <div class="box" id="links"></div>
+    <div class="hide" id="panel">
+        <form onsubmit="return false">
+            <input id="urlLabel" placeholder="label" required />
+            <input id="urlInput" placeholder="hostname" required />
+            <button type="submit" id="addUrl" formnovalidate>➜</button>
+        </form>
+    </div>
+    <div class="btnAdd" id="btnToggle">
+        <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.6 26.6">
+            <path d="M21.2.3L2.8 18.7l5.1 5.1L26.3 5.4c.4-.4.4-1 0-1.4L22.6.3c-.4-.4-1-.4-1.4 0zM1.3 26.5l4.8-1.3-4.8-4.8L0 25.2c-.2 1 .4 1.5 1.3 1.3z"/>
+        </svg>
     </div>
     <script type="text/javascript" src="startpage.js"></script>
 </body>
