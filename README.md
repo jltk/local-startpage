@@ -5,6 +5,8 @@
 + **Pro:** No database needed ([Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API))
 + **Con:** Data might get lost when clearing browser cookies (Firefox) or cache (Chrome) when set to clear "Everything". Also data is browser specific.
 
+## [Demo video [.ogv ~995KB]](https://u.teknik.io/iyRPs.ogv)
+
 I made this to get around having to edit links in my HTML file via text editor; will continuously improve and update.
 
 ---
