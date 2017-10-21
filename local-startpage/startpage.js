@@ -21,7 +21,7 @@
             var links = linkOptions.fetchLinks();
             var html = '<ul>';
             for (var i=0; i<links.length; i++) {
-                html += '<li><a href="https://' + links[i].url + '">' + links[i].label + '</a><button class="remove" id="' + i + '">✖</button></li>';
+                html += '<li><span><a href="https://' + links[i].url + '">' + links[i].label + '</a><button class="remove" id="' + i + '">✖</button></span></li>';
             };
             html += '</ul>';
             document.getElementById('links').innerHTML = html;
