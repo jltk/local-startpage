@@ -9,7 +9,7 @@
 
 ![Screenshot](https://u.teknik.io/ywcdE.PNG)
 
-GitHub Page: [https://jltk.github.io/local-startpage/](https://jltk.github.io/local-startpage/)
+Preview: [https://jltk.github.io/local-startpage/](https://jltk.github.io/local-startpage/)
 
 ---
 
