@@ -1,4 +1,4 @@
-# [local-startpage](https://github.com/jltk/local-startpage/releases/tag/v0.1.4)
+# local-startpage
 
 **local-startpage** is a responsive dynamic web browser startpage using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
