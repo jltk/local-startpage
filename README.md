@@ -7,8 +7,6 @@
 + Saved data gets lost when clearing browser cookies (Firefox) or cache (Chrome) when set to clear "Everything"
 + Stored data is browser specific
 
-![Screenshot](https://u.teknik.io/ywcdE.PNG)
-
 Preview: [https://jltk.github.io/local-startpage/](https://jltk.github.io/local-startpage/)
 
 ---
