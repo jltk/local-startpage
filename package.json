@@ -1,6 +1,6 @@
 {
   "name": "local-startpage",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Editable web browser frontpage without dependencies using local storage.",
   "main": "startpage.html",
   "repository": {
