@@ -9,6 +9,8 @@
 
 ![Screenshot](https://u.teknik.io/ywcdE.PNG)
 
+[Preview](https://jltk.github.io/local-startpage/)
+
 ---
 
 ## Install
