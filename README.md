@@ -1,43 +1,26 @@
-# [![local-startpage](https://u.teknik.io/w8SRz.png)](https://github.com/jltk/local-startpage/releases/tag/v0.1.4)
+# [local-startpage](https://github.com/jltk/local-startpage/releases/tag/v0.1.4)
 
-**local-startpage** is a lightweight vanilla HTML and JavaScript file to serve as dynamic web browser startpage, with editable links, stored in the browsers local storage (using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)).
+**local-startpage** is a responsive dynamic web browser startpage using [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
 
-+ **Pro:** No database needed ([Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API))
-+ **Con:** Data might get lost when clearing browser cookies (Firefox) or cache (Chrome) when set to clear "Everything" (will add backup function soon). Also data is browser specific.
++ No database needed ([Web Storage](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API))
++ One 11kb HTML file including CSS and JavaScript
++ Saved data gets lost when clearing browser cookies (Firefox) or cache (Chrome) when set to clear "Everything"
++ Stored data is browser specific
 
-I made this to get around having to edit links in my HTML file via text editor; will continuously improve and update.
-
-### [Demo video [.mp4 ~1.91MB]](https://u.teknik.io/B3cYI.mp4)
-
----
-
-#### Table of contents
-+ [Browser support](#browser-support)
-+ [Install](#install)
-    + [Install via git](#install-via-git)
-    + [Install via npm](#install-via-npm)
-+ [Modify styles](#modify-styles)
-+ [License](#license)
-+ [Contribute](#contribute)
-+ [Further reading](#further-reading)
+![Screenshot](https://u.teknik.io/ywcdE.PNG)
 
 ---
-
-## Browser support
-Tested working as it should be with Mozilla IceCat 52.3.0 (Linux) and Mozilla Firefox 56.0, Google Chrome 63.0 (Windows).
-
-It might work in all current web browser versions except [IE, Edge and Opera Mini](#browser-support-notes).
 
 ## Install
-`startpage.html` and `startpage.js` are required. Favicon is optional.
+Only `startpage.html` is required.
 
 ```
 
     ┌─ README.md
+    ├─ LICENSE.md
     ├─ package.json
-    └─ /local-startpage         // relevant folder
-        ├─ startpage.html       // set this file as startpage in your browser
-        ├─ functions.js         // required by startpage.html
+    └─ /local-startpage
+        ├─ startpage.html       // open/set this file as startpage in your browser
         └─ favicon.ico          // optional
 
 ```
@@ -53,29 +36,17 @@ $ npm install local-startpage
 ```
 You can use ``npm install --prefix /path/to/dir local-startpage --global`` to install to a specific directory.
 
-## Modify styles
-Using default sans-serif font. Organized colors using CSS variables in `startpage.html`.
+## Browser support
+Tested with Mozilla Firefox 59.0.2 (Windows).
++ https://caniuse.com/#search=Web%20Storage
++ https://caniuse.com/#search=flexbox
++ https://caniuse.com/#search=CSS%20variables
 
 ## License
 [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). All image files in this repository are created by me and are also licensed with GNU/GPL v3.0.
 
-## Contribute
-To contribute file an issue or send a pull request.
-
-**TO-DO**  
-- [ ] import/export localStorage for backup
-- [ ] reorderable links with drag/drop
-- [ ] link categories (seperated areas with editable headlines)
-- [ ] editable link entries
-
 ## Further reading
-- https://www.w3.org/TR/webstorage/#dom-localstorage
-- https://de.wikipedia.org/wiki/Web_Storage
-- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
-- https://stackoverflow.com/questions/9948284/how-persistent-is-localstorage
-- Tool used to compress SVG: https://jakearchibald.github.io/svgomg/
-
-### Browser support notes
-- https://caniuse.com/#search=Web%20Storage
-- https://caniuse.com/#search=flexbox
-- https://caniuse.com/#search=CSS%20variables
++ https://www.w3.org/TR/webstorage/#dom-localstorage
++ https://de.wikipedia.org/wiki/Web_Storage
++ https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
++ https://stackoverflow.com/questions/9948284/how-persistent-is-localstorage
