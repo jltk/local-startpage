@@ -7,30 +7,29 @@
     <title>Startpage</title>
     <style>
         :root {
-            /* variables all colors  */
             --main-bg-color: #272d36;
-            --main-color: rgba(40,40,55,.5);
-            --main-link-color: rgba(255,255,255,.7);
-            --main-accent-color: #5ed69c;
-            --main-color-remove: #dc578c;
-            --main-color-remove-text: #704053;
+            /*
+            * uncomment next line and set image url
+            --main-bg-image: url('');
+            */
+            --main-accent-color: #C96070;
+            --main-color: rgb(102, 102, 107);
+            --main-text-color: #f0f0f0;
             --white: #ffffff;
-            --bg-gradient-start: rgba(39,45,54,.25);
-            --bg-gradient-end: rgba(16,23,33,.15);
-            /* variables background image */
-            --main-bg-image: url();
+            --main-focus-color: #1d2125;
         }
         body {
-            background: linear-gradient(70deg, var(--bg-gradient-start), var(--bg-gradient-end)), var(--main-bg-image);
-            background-position: top center;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.4em;
+            background-image: var(--main-bg-image);
+            background-color: var(--main-bg-color);
+            background-size: cover;
             box-sizing: border-box;
             margin: 0;
             height: 100vh;
-            font-size: 16px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: sans-serif;
             -webkit-user-select: none;
             -moz-user-select: none;
             user-select: none;
@@ -41,7 +40,7 @@
             margin: 0;
             display: flex;
             flex-flow: row wrap;
-            max-width: 250px;
+            max-width: 320px;
             text-align: center;
         }
         li {
@@ -51,24 +50,22 @@
             padding: 8px 6px;
         }
         a {
-            color: var(--main-link-color);
+            color: var(--main-text-color);
             text-decoration: none;
             outline: 0;
             border: 0;
             background: var(--main-color);
             padding: 8px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-
+            border-radius: 3px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+        a:hover, a:focus {
+            background: var(--main-accent-color);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
         }
         span {
              position: relative;
              margin: 8px 0;
-        }
-        a:hover {
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-            transform: translateY(1px);
-            background: var(--main-bg-color);
-            color: var(--white);
         }
         .btnAdd {
             position: absolute;
@@ -80,6 +77,7 @@
             border: 0;
             right: 24px;
             bottom: 24px;
+            z-index: 9999;
             cursor: pointer;
             display: flex;
             justify-content: center;
@@ -94,8 +92,12 @@
         .btnAdd:hover svg {
             opacity: 1;
         }
+        .btnAdd:active {
+            background: var(--main-focus-color);
+        }
         .active {
             box-shadow: 0 0 0 6px var(--main-accent-color);
+            background: var(--main-focus-color);
         }
         .hide {
             display: none;
@@ -110,8 +112,8 @@
             margin: 0;
         }
         .remove {
-            color: var(--main-color-remove-text);
-            background: var(--main-color-remove);
+            color: var(--main-bg-color);
+            background: var(--white);
             width: 21px;
             height: 21px;
             border-radius: 21px;
@@ -121,16 +123,17 @@
             right: -14px;
             top: -20px;
         }
-        .remove:hover {
+        .remove:hover, .remove:focus {
             color: var(--white);
+            background: var(--main-accent-color);
         }
         #panel {
             height: 27px;
-            width: 232px;
+            min-width: 232px;
             position: absolute;
             bottom: 35px;
             right: 70px;
-            background: var(--main-color);
+            background: var(--main-focus-color);
             padding: 2px;
         }
         form {
@@ -142,59 +145,154 @@
         }
         #panel button {
             width: 32px;
-            background: var(--main-accent-color);
-            color: var(--main-accent-color);
-            box-shadow: inset 0 0 0 2px var(--main-color);
+            background: var(--white);
+            color: var(--white);
+          
         }
         #panel input {
             padding-left: 6px;
             max-width: 80px;
             margin-right: 2px;
             color: var(--white);
-            background: var(--main-color);
-            box-shadow: inset 0 0 0 2px var(--main-color);
-        }
-        /* a little bit of input ux */
-        #panel button:hover {
-            color: var(--white);
-        }
-        #panel button:active {
-            box-shadow: inset 0 0 0 2px var(--main-color);
+            background: var(--main-bg-color);
+            box-shadow: none;
+            border-bottom: 2px solid white;
         }
         #panel input:focus {
-            box-shadow: inset 0 0 0 2px var(--main-accent-color);
+            border-color: var(--main-accent-color);
         }
         #panel input:valid ~ button {
-            box-shadow: inset 0 0 0 2px var(--white);
-            color: var(--white);
+
+            background: var(--main-accent-color);
         }
         #panel input:valid {
-            box-shadow: inset 0 0 0 2px var(--white);
+            border-color: var(--main-accent-color);
         }
         #panel input:invalid ~ button {
-            box-shadow: inset 0 0 0 2px var(--main-color);
-            color: var(--main-color);
+
+            color: var(--main-bg-color);
         }
-        #panel input:required {
-            box-shadow: 0;
-        }
+
     </style>
 </head>
 <body>
     <base target="_blank"><!-- opens all links in a new window -->
     <div class="box" id="links"></div>
-    <div class="hide" id="panel">
-        <form onsubmit="return false">
-            <input id="urlLabel" placeholder="label" required />
-            <input id="urlInput" placeholder="hostname" required />
-            <button type="submit" id="addUrl" formnovalidate>➜</button>
-        </form>
-    </div>
-    <div class="btnAdd" id="btnToggle">
+    
+    <button aria-pressed="false" class="btnAdd" id="btnToggle" title="Toggle form to add link">
         <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.6 26.6">
             <path d="M21.2.3L2.8 18.7l5.1 5.1L26.3 5.4c.4-.4.4-1 0-1.4L22.6.3c-.4-.4-1-.4-1.4 0zM1.3 26.5l4.8-1.3-4.8-4.8L0 25.2c-.2 1 .4 1.5 1.3 1.3z"/>
         </svg>
+    </button>
+    <div class="hide" id="panel">
+        <form name="submitform" onsubmit="return false">
+            <input id="urlLabel" list="defaultLabels" type="text" name="label" placeholder="label" title="Input label" required>
+            <datalist id="defaultLabels">
+                <option value="Startpagex">
+                <option value="DuckDuckGo">
+                <option value="Hacker News">
+                <option value="/.">
+                <option value="Wikipedia">
+                <option value="Reddit">
+                <option value="/tech/">
+            </datalist>
+            <input id="urlInput" list="defaultURLs" type="url" name="hostname" placeholder="link" title="Input link (URLs must start with https://)" required>
+            <datalist id="defaultURLs">
+                <option value="https://">
+                <option value="https://startpage.com/">
+                <option value="https://duckduckgo.com/">
+                <option value="https://news.ycombinator.com/">
+                <option value="https://slashdot.org/">
+                <option value="https://en.m.wikipedia.org/">
+                <option value="https://reddit.com/">
+                <option value="https://nerv.8ch.net/tech/cyber/g/sudo/prog/sci/">
+            </datalist>
+            <button type="submit" title="Add link" id="addUrl" formnovalidate>➜</button>
+        </form>
     </div>
-    <script type="text/javascript" src="startpage.js"></script>
+    <script type="text/javascript">
+        (function() {
+            var linkOptions = {
+                fetchLinks: function() {
+                    var links = new Array;
+                    var links_str = localStorage.getItem('link');
+                    if (links_str != null) {
+                        links = JSON.parse(links_str);
+                    }
+                    return links;
+                },
+                removeLink: function() {
+                    var id = this.getAttribute('id');
+                    var links = linkOptions.fetchLinks();
+                    links.splice(id, 1);
+                    localStorage.setItem('link', JSON.stringify(links));
+                    linkOptions.showLinks();
+                    return false;
+                },
+                showLinks: function() {
+                    var links = linkOptions.fetchLinks();
+                    var html = '<ul>';
+                    for (var i=0; i<links.length; i++) {
+                        html += '<li><span><a href="' + links[i].url + '">' + links[i].label + '</a><button title="Remove" class="remove" id="' + i + '">✖</button></span></li>';
+                    };
+                    html += '</ul>';
+                    document.getElementById('links').innerHTML = html;
+                    var buttons = document.getElementsByClassName('remove');
+                    for (var i=0; i<buttons.length; i++) {
+                        buttons[i].addEventListener('click', linkOptions.removeLink);
+                    };
+                },
+                addLink: function() {
+                    var linkNew = document.getElementById('urlInput').value;
+                    var labelNew = document.getElementById('urlLabel').value;
+                    var newLink = { "url": linkNew, "label": labelNew };
+                    var links = linkOptions.fetchLinks();
+                    if (linkNew == "" || labelNew == "") {
+                        return false;
+                    } else {
+                        links.push(newLink);
+                        localStorage.setItem('link', JSON.stringify(links));
+                        linkOptions.showLinks();
+                        document.getElementById('urlInput').value = ""
+                        document.getElementById('urlLabel').value = ""
+                    }
+                }
+            };
+            document.getElementById('addUrl').addEventListener('click', linkOptions.addLink);
+            linkOptions.showLinks();
+            var toggleMenu = {
+                btnToggle: document.getElementById('btnToggle'),
+                menu: document.getElementById('panel'),
+                btnIcon: document.getElementById('icon'),
+                btnClose: document.getElementsByClassName('remove'),
+                btnClick: function() {
+                    toggleMenu.btnToggle.addEventListener('click', function() {
+                        toggleMenu.menu.classList.toggle('hide');
+                        toggleMenu.btnToggle.classList.toggle('active');
+                        for (i=0; i<toggleMenu.btnClose.length; i++) {
+                            if (toggleMenu.btnClose[i].style.display == "none") {
+                                toggleMenu.btnClose[i].style.display = "block";
+                                toggleMenu.btnIcon.style.opacity = "1";
+                            } else {
+                                toggleMenu.btnClose[i].style.display = "none";
+                                toggleMenu.btnIcon.style.opacity = "0.7";
+                            }
+                        };
+                    });
+                },
+                btnCloseVis: function() {
+                    for (i=0; i<toggleMenu.btnClose.length; i++) {
+                        if (toggleMenu.btnClose[i].style.display = "block") {
+                            toggleMenu.btnClose[i].style.display = "none";
+                        } else {
+                            toggleMenu.btnClose[i].style.display = "block";
+                        }
+                    };
+                }
+            };
+            toggleMenu.btnClick();
+            document.onload = toggleMenu.btnCloseVis();
+        })();
+    </script>
 </body>
 </html>
