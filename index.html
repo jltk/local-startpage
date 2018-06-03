@@ -5,6 +5,12 @@
     <link rel="icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startpage</title>
+    <!-- TODO
+        [ ] svg icon for arrow
+        [ ] editable entries
+        [ ] change focus color of submit button! and make validation more visible by color
+        [ ] disable tap highlights and replace by :focus or sth and disable that mozilla dotted outline
+    -->
     <style>
         :root {
             --main-bg-color: #272d36;
@@ -18,6 +24,10 @@
             --white: #ffffff;
             --main-focus-color: #1d2125;
         }
+        body, html {
+            height: 100%;
+            width:100%;
+        }
         body {
             font-family: "Times New Roman", Times, serif;
             font-size: 1.4em;
@@ -27,7 +37,7 @@
             background-position: center;
             box-sizing: border-box;
             margin: 0;
-            height: 100vh;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -69,7 +79,7 @@
              margin: 8px 0;
         }
         .btnAdd {
-            position: absolute;
+            position: fixed;
             width: 54px;
             height: 54px;
             border-radius: 54px;
@@ -80,21 +90,22 @@
             bottom: 24px;
             z-index: 9999;
             cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            -webkit-touch-callout: none;
         }
         .btnAdd svg {
             fill: var(--white);
-            opacity: .7;
+            opacity: .6;
             width: 18px;
             height: 18px;
-        }
-        .btnAdd:hover svg {
-            opacity: 1;
+            margin-top: 2px;
         }
         .btnAdd:active {
             background: var(--main-focus-color);
+        }
+        .btnAdd:focus {
+            box-shadow: 0 0 0 6px var(--main-accent-color);
         }
         .active {
             box-shadow: 0 0 0 6px var(--main-accent-color);
@@ -105,6 +116,9 @@
         }
         button {
             cursor: pointer;
+        }
+        button::-moz-focus-inner {
+            border: 0;
         }
         button, input {
             outline: 0;
@@ -129,11 +143,10 @@
             background: var(--main-accent-color);
         }
         #panel {
-            height: 27px;
-            min-width: 232px;
-            position: absolute;
-            bottom: 35px;
-            right: 70px;
+            height: 48px;
+            min-width: 100%;
+            position: fixed;
+            top: 0;
             background: var(--main-focus-color);
             padding: 2px;
         }
@@ -141,18 +154,19 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            margin: 0;
             display: flex;
         }
         #panel button {
-            width: 32px;
+            width: 48px;
             background: var(--white);
             color: var(--white);
-          
+        }
+        #panel button:focus {
+            border: 1px solid var(--white);
         }
         #panel input {
-            padding-left: 6px;
-            max-width: 80px;
+            padding-left: 8px;
+            flex: 1;
             margin-right: 2px;
             color: var(--white);
             background: var(--main-bg-color);
@@ -163,23 +177,24 @@
             border-color: var(--main-accent-color);
         }
         #panel input:valid ~ button {
-
             background: var(--main-accent-color);
         }
         #panel input:valid {
             border-color: var(--main-accent-color);
         }
         #panel input:invalid ~ button {
-
             color: var(--main-bg-color);
+            background: var(--main-color);
         }
-
+        /*remove datalist arrow in webkit*/
+        input::-webkit-calendar-picker-indicator {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <base target="_blank"><!-- opens all links in a new window -->
-    <div class="box" id="links"></div>
-    
+    <div id="links"></div>
     <button aria-pressed="false" class="btnAdd" id="btnToggle" title="Toggle form to add link">
         <svg id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.6 26.6">
             <path d="M21.2.3L2.8 18.7l5.1 5.1L26.3 5.4c.4-.4.4-1 0-1.4L22.6.3c-.4-.4-1-.4-1.4 0zM1.3 26.5l4.8-1.3-4.8-4.8L0 25.2c-.2 1 .4 1.5 1.3 1.3z"/>
