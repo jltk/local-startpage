@@ -5,12 +5,6 @@
     <link rel="icon" href="favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Startpage</title>
-    <!-- TODO
-        [ ] svg icon for arrow
-        [ ] editable entries
-        [ ] change focus color of submit button! and make validation more visible by color
-        [ ] disable tap highlights and replace by :focus or sth and disable that mozilla dotted outline
-    -->
     <style>
         :root {
             --main-bg-color: #272d36;
@@ -116,6 +110,7 @@
         }
         button {
             cursor: pointer;
+            margin-right: 3px;
         }
         button::-moz-focus-inner {
             border: 0;
@@ -143,7 +138,6 @@
             background: var(--main-accent-color);
         }
         #panel {
-            height: 48px;
             min-width: 100%;
             position: fixed;
             top: 0;
@@ -152,12 +146,33 @@
         }
         form {
             padding: 0;
-            height: 100%;
             width: 100%;
             display: flex;
+            -webkit-flex-flow: column wrap;
+	        flex-flow: column wrap;
+        }
+        @media only screen and (min-width: 480px) {
+            form {
+                width: none;
+                -webkit-flex-flow: row wrap;
+	            flex-flow: row wrap;
+            }
+            button {
+                width: 56px;   
+                margin-right: 2px;
+            }
+            input {
+                flex: 1 auto;
+                margin-right: 2px;
+            }
+        }
+        input {
+            height: 48px;
+        }
+        form button {
+            min-height: 48px;
         }
         #panel button {
-            width: 48px;
             background: var(--white);
             color: var(--white);
         }
@@ -166,8 +181,6 @@
         }
         #panel input {
             padding-left: 8px;
-            flex: 1;
-            margin-right: 2px;
             color: var(--white);
             background: var(--main-bg-color);
             box-shadow: none;
@@ -249,7 +262,7 @@
                     var links = linkOptions.fetchLinks();
                     var html = '<ul>';
                     for (var i=0; i<links.length; i++) {
-                        html += '<li><span><a href="' + links[i].url + '">' + links[i].label + '</a><button title="Remove" class="remove" id="' + i + '">✖</button></span></li>';
+                        html += '<li><span class="link"><a href="' + links[i].url + '">' + links[i].label + '</a><button title="Remove" class="remove" id="' + i + '">✖</button></span></li>';
                     };
                     html += '</ul>';
                     document.getElementById('links').innerHTML = html;
@@ -312,3 +325,7 @@
     </script>
 </body>
 </html>
+<!-- TODO:
+    [ ] svg icon for arrow
+    [ ] editable entries
+-->
